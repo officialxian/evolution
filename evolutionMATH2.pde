@@ -1466,11 +1466,19 @@ void drawStatusWindow(boolean isFirstFrame) {
     }
   }
 }
+
+/*
+ * Added settings() and moved size() from setup() to provide compatibility
+ *     with Processing 3. Tested and functional on Processing 3.2.1 on 10/7/16
+ */
+void settings() {
+  size((int)(windowWidth*windowSizeMultiplier), (int)(windowHeight*windowSizeMultiplier));
+}
+
 void setup() {
   frameRate(60);
   randomSeed(SEED);
   noSmooth();
-  size((int)(windowWidth*windowSizeMultiplier), (int)(windowHeight*windowSizeMultiplier));
   ellipseMode(CENTER);
   Float[] beginPercentile = new Float[29];
   Integer[] beginBar = new Integer[barLen];
